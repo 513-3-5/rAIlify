@@ -1,6 +1,6 @@
 import sys
 import os
-import PyPDF2
+from PyPDF2 import PdfReader
 
 
 
@@ -10,7 +10,7 @@ def is_pdf(file_path):
 def count_pages_in_pdf(file_path):
     try:
         with open(file_path, "rb") as file: # "rb" = read binary
-            reader = PyPDF2.PdfReader(file)
+            reader = PdfReader(file)
             return len(reader.pages)
     except Exception as e:
         print(f"Error reading from file: {e}")
@@ -38,6 +38,10 @@ def is_valid_pdf(pdf_path):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) == 1:
+        print("Error: Please provide a .pdf file.")
+        sys.exit(1)          
+
     # if len(sys.argv) < 2: # TODO: probably multiple pdf files possible?
     #    print("Please only provide a single .pdf file.")
     #    sys.exit(1)
