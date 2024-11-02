@@ -1,6 +1,8 @@
 # rAIlify
 rAIlify is a challenge pitched by Siemens at the 2024 [BaselHack](https://www.baselhack.ch/). 
 
+![Logo derailed](assets/img/logo_png.png)
+
 
 ### Task of Challenge (User Story)
 As a railway engineer at Siemens Mobility, I want to utilize a digital node-edge model of my railway network. Unfortunately, information gets delivered in old school vectorized PDF and TIFF formats. I’m far too lazy to manually engineer that huge variety of visual data.
@@ -9,7 +11,10 @@ Help me to recognize tracks, switches , signals, annotations and other entities 
 
 My vision is to use the extracted topology data as input for further sophisticated railway solutions. To have a digital model that spans the entire engineering process and life cycle.
 
-### Team Members
+### Workflow Diagram
+![Workflow Diagram](documentation/Dataflow_diagram_png.png)
+
+### Team Members 
 * Amar Tabakovic
 * Johannes Casaburi
 * Adrian Altermatt
