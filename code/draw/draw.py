@@ -1,7 +1,4 @@
-import sys
-import os
 import json
-import argparse
 from PyPDF2 import PdfReader, PdfWriter
 from PyPDF2.generic import AnnotationBuilder
 
