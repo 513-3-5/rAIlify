@@ -2,9 +2,11 @@ import sys
 import os
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
+from draw import draw 
 
-
+  
 splitted_pdfs = []
+annotated_pdfs = []
 
 def is_pdf(file_path):
     return file_path.lower().endswith(".pdf")
@@ -113,6 +115,15 @@ if __name__ == "__main__":
         print(pdf)
         
         # TODO: Continue Process 
+        json = "code/visualization/example.json" # TODO change json path
+
+        annotated_pdfs.append(draw.draw_annotations(pdf, json))
+
+        for an_pdf in annotated_pdfs:
+            print(f"annotated: {an_pdf} ")
+
+
+
 
 
     clear_output_directory()
