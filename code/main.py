@@ -6,6 +6,12 @@ from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
 from draw import draw 
 
+
+import fitz  # PyMuPDF
+import pytesseract
+from PIL import Image
+import io
+
   
 splitted_pdfs = []
 annotated_pdfs = []
@@ -109,10 +115,42 @@ def open_pdf(file_path):
             subprocess.run(["xdg-open", file_path])
         print(f"{file_path} wurde im Standard-PDF-Reader geöffnet.")
     except Exception as e:
-        print(f"Fehler beim Öffnen der Datei: {e}")                
+        print(f"Fehler beim Öffnen der Datei: {e}")    
+
+        
+def extract_text_with_coordinates(pdf_path):
+    results = []
+
+    pdf_document = fitz.open(pdf_path)
+   
+    for page_number in range(len(pdf_document)):
+        page = pdf_document[page_number]
+        
+        # Render page as a png file
+        pix = page.get_pixmap(dpi=300) 
+        img = Image.open(io.BytesIO(pix.tobytes("png")))
+        
+        ocr_data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
+
+        # Extract textblocks and its coords
+        page_results = []
+        for i in range(len(ocr_data["text"])):
+            text = ocr_data["text"][i].strip()
+            if text:  # Nur nicht-leere Texte betrachten
+                x, y, w, h = ocr_data["left"][i], ocr_data["top"][i], ocr_data["width"][i], ocr_data["height"][i]
+                bbox = (x, y, x + w, y + h)
+                
+                page_results.append({"text": text, "coordinates": bbox})
+        
+        results.append({"page": page_number + 1, "blocks": page_results})
+    
+    pdf_document.close()
+    
+    return results                    
 
 
 if __name__ == "__main__":
+    pytesseract.pytesseract.tesseract_cmd = "C:/Program Files/Tesseract-OCR/tesseract.exe"
     if len(sys.argv) == 1:
         print("Error: Please provide a .pdf or .tif file.")
         sys.exit(1)          
@@ -127,11 +165,18 @@ if __name__ == "__main__":
         sys.exit(1)
 
     for pdf in splitted_pdfs:
-        print(pdf)
+        text_data = extract_text_with_coordinates(pdf)
+
+        # Ausgabe der Ergebnisse
+        for page_data in text_data:
+            print(f"Page {page_data['page']}:")
+            for block in page_data["blocks"]:
+                print(f"Text: {block['text']}, Coordinates: {block['coordinates']}")
+
         
         # TODO: Continue Process 
         json = "code/visualization/example.json" # TODO change json path
-
+      
         annotated_pdfs.append(draw.draw_annotations(pdf, json))
 
     merger = PdfWriter()
@@ -140,7 +185,8 @@ if __name__ == "__main__":
         print(f"annotated: {an_pdf} ")
     
     an_pdf_file_name = f"{file_path.split('.pdf')[0]}_annotated.pdf"
-    merger.write(an_pdf_file_name)    
+    merger.write(an_pdf_file_name) 
+           
     print(f"Annotated PDF generated: {an_pdf_file_name}")
 
     clear_output_directory()
