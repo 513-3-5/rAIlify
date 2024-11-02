@@ -1,56 +1,57 @@
 [
   {
-    "type": "edge",
-    "uuid": "2121-2121-2121",
-    "originX": null,
-    "originY": null,
-    "element": "Weiche",
-    "name": "",
-    "parents": ["2222-2222-2222", "3333-3333-3333", "4444-4444-4444"]
+    "type": "node",
+    "uuid": "1111-1111-1111",
+    "originX": 10.0,
+    "originY": 100.0,
+    "width": 1.0,
+    "height": 1.0,
+    "element": "Radzähler",
+    "name": "ZP1",
+    "parents": []
+  },
+  {
+    "type": "node",
+    "uuid": "2222-2222-2222",
+    "originX": 20.0,
+    "originY": 100.0,
+    "width": 1.0,
+    "height": 1.0,
+    "element": "Radzähler",
+    "name": "ZP2",
+    "parents": []
   },
   {
     "type": "node",
     "uuid": "3333-3333-3333",
-    "originX": 40,
-    "originY": 110,
+    "originX": 40.0,
+    "originY": 110.0,
+    "width": 1.0,
+    "height": 1.0,
     "element": "Radzähler",
     "name": "ZP3",
     "parents": []
   },
   {
     "type": "node",
-    "uuid": "2222-2222-2222",
-    "originX": 20,
-    "originY": 100,
-    "element": "Radzähler",
-    "name": "ZP2",
-    "parents": []
-  },
-  {
-    "type": "edge",
-    "uuid": "1212-1212-1212",
-    "originX": null,
-    "originY": null,
-    "element": "Gleisabschnitt",
-    "name": "100",
-    "parents": ["1111-1111-1111", "2222-2222-2222"]
-  },
-  {
-    "type": "node",
     "uuid": "4444-4444-4444",
     "originX": 40,
     "originY": 90,
+    "width": 1.0,
+    "height": 1.0,
     "element": "Radzähler",
     "name": "ZP4",
     "parents": []
   },
   {
     "type": "node",
-    "uuid": "1111-1111-1111",
-    "originX": 10,
-    "originY": 100,
+    "uuid": "5555-5555-5555",
+    "originX": 50,
+    "originY": 110,
+    "width": 1.0,
+    "height": 1.0,
     "element": "Radzähler",
-    "name": "ZP1",
+    "name": "ZP5",
     "parents": []
   },
   {
@@ -58,6 +59,8 @@
     "uuid": "6666-6666-6666",
     "originX": 50,
     "originY": 90,
+    "width": 1.0,
+    "height": 1.0,
     "element": "Radzähler",
     "name": "ZP6",
     "parents": []
@@ -65,17 +68,32 @@
   {
     "type": "node",
     "uuid": "7777-7777-7777",
-    "originX": 50,
+    "originX": 70,
     "originY": 100,
+    "width": 1.0,
+    "height": 1.0,
     "element": "Radzähler",
     "name": "ZP7",
     "parents": []
   },
   {
     "type": "edge",
+    "uuid": "1212-1212-1212",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "100",
+    "parents": ["1111-1111-1111", "2222-2222-2222"]
+  },
+  {
+    "type": "edge",
     "uuid": "1313-1313-1313",
     "originX": null,
     "originY": null,
+    "width": null,
+    "height": null,
     "element": "Gleisabschnitt",
     "name": "101",
     "parents": ["3333-3333-3333", "5555-5555-5555"]
@@ -85,26 +103,131 @@
     "uuid": "1414-1414-1414",
     "originX": null,
     "originY": null,
+    "width": null,
+    "height": null,
     "element": "Gleisabschnitt",
     "name": "102",
     "parents": ["4444-4444-4444", "6666-6666-6666"]
   },
   {
     "type": "node",
-    "uuid": "5555-5555-5555",
-    "originX": 50,
-    "originY": 110,
-    "element": "Radzähler",
-    "name": "ZP5",
+    "uuid": "8888-8888-8888",
+    "originX": 30,
+    "originY": 100,
+    "width": 1.0,
+    "height": 1.0,
+    "element": "Weiche",
+    "name": "",
+    "parents": []
+  },
+  {
+    "type": "node",
+    "uuid": "9999-9999-9999",
+    "originX": 60,
+    "originY": 100,
+    "width": 1.0,
+    "height": 1.0,
+    "element": "Weiche",
+    "name": "",
     "parents": []
   },
   {
     "type": "edge",
-    "uuid": "2121-2121-2121",
+    "uuid": "1515-1515-1515",
     "originX": null,
     "originY": null,
-    "element": "Weiche",
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
     "name": "",
-    "parents": ["5555-5555-5555", "6666-6666-6666", "7777-7777-7777"]
+    "parents": ["2222-2222-2222", "8888-8888-8888"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1616-1616-1616",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "",
+    "parents": ["8888-8888-8888", "3333-3333-3333"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1717-1717-1717",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "",
+    "parents": ["8888-8888-8888", "4444-4444-4444"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1717-1717-1717",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "",
+    "parents": ["5555-5555-5555", "9999-9999-9999"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1818-1818-1818",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "",
+    "parents": ["6666-6666-6666", "9999-9999-9999"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1919-1919-1919",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "",
+    "parents": ["9999-9999-9999", "7777-7777-7777"]
+  },
+  {
+    "type": "object",
+    "uuid": "aaaa-aaaa-aaaa",
+    "originX": 20.0,
+    "originY": 90.0,
+    "width": 1.0,
+    "height": 2.0,
+    "element": "Mainsignal",
+    "name": "B1",
+    "parents": ["2222-2222-2222"]
+  },
+  {
+    "type": "object",
+    "uuid": "bbbb-bbbb-bbbb",
+    "originX": 45.0,
+    "originY": 120.0,
+    "width": 1.0,
+    "height": 2.0,
+    "element": "Mainsignal",
+    "name": "B2",
+    "parents": []
+  },
+  {
+    "type": "object",
+    "uuid": "cccc-cccc-cccc",
+    "originX": 70.0,
+    "originY": 70.0,
+    "width": 1.0,
+    "height": 2.0,
+    "element": "Mainsignal",
+    "name": "B2",
+    "parents": ["7777-7777-7777"]
   }
 ]
