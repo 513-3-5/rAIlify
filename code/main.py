@@ -1,5 +1,7 @@
 import sys
 import os
+import platform
+import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
 from draw import draw 
@@ -96,6 +98,19 @@ def clear_output_directory():
             except Exception as e:
                 print(f"Error deleting file {file_path}: {e}")
 
+# Opens a pdf file directly on your standard pdf reader
+def open_pdf(file_path):
+    try:
+        if platform.system() == "Windows":
+            os.startfile(file_path)
+        elif platform.system() == "Darwin":  # macOS
+            subprocess.run(["open", file_path])
+        elif platform.system() == "Linux":  
+            subprocess.run(["xdg-open", file_path])
+        print(f"{file_path} wurde im Standard-PDF-Reader geöffnet.")
+    except Exception as e:
+        print(f"Fehler beim Öffnen der Datei: {e}")                
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
@@ -122,16 +137,14 @@ if __name__ == "__main__":
     merger = PdfWriter()
 
     for an_pdf in annotated_pdfs:
-        merger.append(an_pdf)
         print(f"annotated: {an_pdf} ")
-
     
     an_pdf_file_name = f"{file_path.split('.pdf')[0]}_annotated.pdf"
     merger.write(an_pdf_file_name)    
     print(f"Annotated PDF generated: {an_pdf_file_name}")
 
-
     clear_output_directory()
+    open_pdf(an_pdf_file_name);
     
 
 
