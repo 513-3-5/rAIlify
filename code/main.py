@@ -119,11 +119,16 @@ if __name__ == "__main__":
 
         annotated_pdfs.append(draw.draw_annotations(pdf, json))
 
-        for an_pdf in annotated_pdfs:
-            print(f"annotated: {an_pdf} ")
+    merger = PdfWriter()
 
+    for an_pdf in annotated_pdfs:
+        merger.append(an_pdf)
+        print(f"annotated: {an_pdf} ")
 
-
+    
+    an_pdf_file_name = f"{file_path.split('.pdf')[0]}_annotated.pdf"
+    merger.write(an_pdf_file_name)    
+    print(f"Annotated PDF generated: {an_pdf_file_name}")
 
 
     clear_output_directory()
