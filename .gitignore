@@ -1,4 +1,3 @@
 .idea
 __pycache__
-/code/visualization/graph.dot
-/code/visualization/graph.png
+/code/visualization/output
