@@ -1,0 +1,119 @@
+[
+  {
+    "type": "node",
+    "uuid": "1111-1111-1111",
+    "originX": 10,
+    "originY": 120,
+    "element": "Gleisende",
+    "name": "",
+    "parents": []
+  },
+  {
+  "type": "node",
+  "uuid": "2222-2222-2222",
+  "originX": 10,
+  "originY": 110,
+  "element": "Gleisende",
+  "name": "",
+  "parents": []
+  },
+  {
+  "type": "node",
+  "uuid": "3333-3333-3333",
+  "originX": 10,
+  "originY": 100,
+  "element": "Gleisende",
+  "name": "",
+  "parents": []
+  },
+  {
+    "type": "node",
+    "uuid": "4444-4444-4444",
+    "originX": 20,
+    "originY": 120,
+    "element": "Radzähler",
+    "name": "ZP00101",
+    "parents": []
+  },
+  {
+    "type": "node",
+    "uuid": "5555-5555-5555",
+    "originX": 20,
+    "originY": 110,
+    "element": "Radzähler",
+    "name": "ZP00201",
+    "parents": []
+  },
+  {
+    "type": "node",
+    "uuid": "6666-6666-6666",
+    "originX": 30,
+    "originY": 100,
+    "element": "Radzähler",
+    "name": "ZP00301",
+    "parents": []
+  },
+  {
+    "type": "edge",
+    "uuid": "1212-1212-1212",
+    "originX": null,
+    "originY": null,
+    "element": "Gleisabschnitt",
+    "name": "1",
+    "parents": ["1111-1111-1111", "4444-4444-4444"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1313-1313-1313",
+    "originX": null,
+    "originY": null,
+    "element": "Gleisabschnitt",
+    "name": "2",
+    "parents": ["2222-2222-2222", "5555-5555-5555"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1414-1414-1414",
+    "originX": null,
+    "originY": null,
+    "element": "Gleisabschnitt",
+    "name": "3",
+    "parents": ["3333-3333-3333", "6666-6666-6666"]
+  },
+  {
+    "type": "node",
+    "uuid": "7777-7777-7777",
+    "originX": 40,
+    "originY": 110,
+    "element": "Radzähler",
+    "name": "ZP1W2",
+    "parents": []
+  },
+  {
+    "type": "node",
+    "uuid": "8888-8888-8888",
+    "originX": 50,
+    "originY": 100,
+    "element": "Radzähler",
+    "name": "ZP1W1",
+    "parents": []
+  },
+  {
+    "type": "edge",
+    "uuid": "1515-1515-1515",
+    "originX": null,
+    "originY": null,
+    "element": "Gleisabschnitt",
+    "name": "2",
+    "parents": ["4444-4444-4444", "5555-5555-5555", "7777-7777-7777"]
+  },
+  {
+    "type": "edge",
+    "uuid": "1616-1616-1616",
+    "originX": null,
+    "originY": null,
+    "element": "Gleisabschnitt",
+    "name": "3",
+    "parents": ["7777-7777-7777", "6666-6666-6666", "8888-8888-8888"]
+  }
+]
