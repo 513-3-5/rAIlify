@@ -4,9 +4,10 @@ import platform
 import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
-from draw import draw 
+from draw import draw
+from pdf2image import convert_from_path  
 
-  
+rail_pngs = []  
 splitted_pdfs = []
 annotated_pdfs = []
 
@@ -40,7 +41,7 @@ def convert_tiff_to_pdf(file_path):
 
 def split_pdf(file_path, num_pages):
     try:
-        output_dir = "assets/temp_output"
+        output_dir = "assets/temp_pdf_output"
         os.makedirs(output_dir, exist_ok=True)
         
         with open(file_path, "rb") as file:
@@ -88,8 +89,7 @@ def is_valid_pdf(file_path):
     
     return True
 
-def clear_output_directory():
-    output_dir = "assets/temp_output"
+def clear_output_directory(output_dir):    
     if os.path.exists(output_dir):
         for file_name in os.listdir(output_dir):
             file_path = os.path.join(output_dir, file_name)
@@ -97,6 +97,20 @@ def clear_output_directory():
                 os.remove(file_path)
             except Exception as e:
                 print(f"Error deleting file {file_path}: {e}")
+
+def convert_pdf_to_png(pdf_path, output_dir="assets/temp_png_output"):
+    os.makedirs(output_dir, exist_ok=True)
+    try:
+        images = convert_from_path(pdf_path)
+        for i, image in enumerate(images):
+            output_png_path = os.path.join(output_dir, f"{os.path.basename(pdf_path).rsplit('.', 1)[0]}_p{i+1}.png")
+            image.save(output_png_path, "PNG")
+            rail_pngs.append(output_png_path)
+            print(f"Page {i+1} converted to PNG: {output_png_path}")
+        return rail_pngs
+    except Exception as e:
+        print(f"Error converting PDF to PNG: {e}")
+        return None                
 
 # Opens a pdf file directly on your standard pdf reader
 def open_pdf(file_path):
@@ -107,9 +121,8 @@ def open_pdf(file_path):
             subprocess.run(["open", file_path])
         elif platform.system() == "Linux":  
             subprocess.run(["xdg-open", file_path])
-        print(f"{file_path} wurde im Standard-PDF-Reader geöffnet.")
     except Exception as e:
-        print(f"Fehler beim Öffnen der Datei: {e}")                
+        print(f"Error opening PDF file: {e}")                
 
 
 if __name__ == "__main__":
@@ -127,7 +140,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     for pdf in splitted_pdfs:
-        print(pdf)
+        convert_pdf_to_png(pdf) # Fills List rail_pngs
         
         # TODO: Continue Process 
         json = "code/visualization/example.json" # TODO change json path
@@ -137,13 +150,15 @@ if __name__ == "__main__":
     merger = PdfWriter()
 
     for an_pdf in annotated_pdfs:
-        print(f"annotated: {an_pdf} ")
-    
+        merger.append(an_pdf)
+   
     an_pdf_file_name = f"{file_path.split('.pdf')[0]}_annotated.pdf"
     merger.write(an_pdf_file_name)    
     print(f"Annotated PDF generated: {an_pdf_file_name}")
 
-    clear_output_directory()
+    clear_output_directory("assets/temp_pdf_output")
+    clear_output_directory("assets/temp_png_output")
+    
     open_pdf(an_pdf_file_name);
     
 
