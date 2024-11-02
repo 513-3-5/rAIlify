@@ -1,7 +1,7 @@
 # rAIlify
 rAIlify is a challenge pitched by Siemens at the 2024 [BaselHack](https://www.baselhack.ch/). 
 
-![Logo derailed](assets/img/logo_png.png)
+![Logo derailed](assets/img/logo_png_w_bg.png)
 
 
 ### Task of Challenge (User Story)
