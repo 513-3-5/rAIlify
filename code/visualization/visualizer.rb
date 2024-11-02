@@ -3,15 +3,8 @@ require "json"
 file = File.read('example.json')
 data = JSON.parse(file)
 
-nodes = data.filter do |node|
-  node["type"] == "node"
-end.sort_by do |node|
-  [node["originX"], node["originY"]]
-end
-
-edges = data.filter do |node|
-  node["type"] == "edge"
-end
+nodes = data.filter { |node| node["type"] == "node" }.sort_by { |node| [node["originX"], node["originY"]] }
+edges = data.filter { |node| node["type"] == "edge" }
 
 visualizing_array = [[nodes[0]]]
 nodes.shift
@@ -33,11 +26,15 @@ loop do
   break if nodes.empty?
 end
 
+width = visualizing_array.map(&:length).max
+
 visualizing_array.map do |row|
+  (width - (row.length / 2)).times { print " " }
   row.map do |column|
     print "|" if column["element"] == "Gleisabschnitt"
     print "*" if column["element"] == "Radzähler"
     print "^" if column["element"] == "Weiche"
+    print " "
   end
   print "\n"
 end
