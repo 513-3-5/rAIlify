@@ -44,7 +44,53 @@ The application can be run with multiple files. The results will be stored in th
 - Run application: `ruby visualizer.rb path/filename1.json path/filename2.json ...`
 - Run with given example files: `ruby visualizer.rb input/example.json input/tiefengrund.json`
 
-### Sliding Window Approach
+### Input / Structured Data Structure
+
+The following data structure is expected out of the image analysis:
+
+```json
+[
+  {
+    "type": "node",
+    "uuid": "1111-1111-1111",
+    "originX": 10.0,
+    "originY": 100.0,
+    "width": 1.0,
+    "height": 1.0,
+    "element": "Radzähler",
+    "name": "ZP1",
+    "parents": []
+  },
+  {
+    "type": "edge",
+    "uuid": "1212-1212-1212",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "100",
+    "parents": ["1111-1111-1111", "2222-2222-2222"]
+  },
+  {
+    "type": "object",
+    "uuid": "cccc-cccc-cccc",
+    "originX": 70.0,
+    "originY": 70.0,
+    "width": 1.0,
+    "height": 2.0,
+    "element": "Mainsignal",
+    "name": "B2",
+    "parents": ["7777-7777-7777"]
+  }
+]
+```
+
+### Output
+
+![Visualized Graph Example](code/visualization/output/example.png)
+
+## Sliding Window Approach
 One challenge we needed to handle was detecting symbols across a large, high-resolution image. YOLO models are typically designed for object detection on images with 640 x 640 dimensions. Since railway plans can be significantly larger than the standard input size, containing intricate details spread across a wide area, downsizing that image to a 640x640 format led to a worse recognition of the symbols by our algorithm. 
 
 Using a sliding window approach allowed us to systematically scan the large image, splitting it into smaller, manageable segments that matched the input size required by the YOLO model. We used a window of 640 with a stride of 320. Each window was then analyzed separately, ensuring that small and detailed features present in the image are captured. Without the sliding window approach, it would have been challenging for the model to accurately identify small or densely packed symbols in the high-resolution image, as downscaling would likely lead to loss of crucial information.
