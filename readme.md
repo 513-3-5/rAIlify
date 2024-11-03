@@ -65,9 +65,9 @@ With the sliding window approach, these symbols were recognised:
 9 trackjoints, 9 tracknumbers, 10 weiches
 ![Extra 2 Before](assets/img/extra2_before.png)
 15 radzaehler, 17 trackjoints, 14 tracknumbers, 21 weiches, 
-![Extra 2 After](assets/img/extra2_after.png)
+![Extra 2 After](assets/img/extra3_after.png)
 
 1 trackjoint, 2 tracknumbers, 2 weiches
 ![Extra 3 Before](assets/img/extra3_before.png)
 6 radzaehlers, 6 tracknumbers, 9 trackjoints, 1 weiche
-![Extra 3 After](assets/img/extra3_after.png)
+![Extra 3 After](assets/img/extra2_after.png)
