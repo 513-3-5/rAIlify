@@ -19,7 +19,7 @@ def cls_to_str(cls_id):
 
 def strip_non_numbers(input_string):
     return re.sub(r'\D', '', input_string)
-
+    
 class GraphEntity():
   """
   This is pretty ugly and optimally, you'd do this in another way,
@@ -75,7 +75,6 @@ class ClassificationResultHandler:
   def __init__(self):
     pass
 
-  # TODO(amartabakovic)
   def generate_classified_objects(self, classification_results):
     objs = []
     for result in classification_results:
