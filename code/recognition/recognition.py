@@ -10,7 +10,7 @@ CLASS_TRACKNUMBER = 3
 CLASS_WEICHE = 4
 
 def cls_to_str(cls_id):
-  class_map = ['mainsignal', 'radzaehler', 'trackjoint', 'tracknumber', 'weiche']
+  class_map = ['Mainsignal', 'Radzähler', 'Trackjoint', 'Tracknumber', 'Weiche']
   return class_map[cls_id]
 
 class GraphEntity():
@@ -34,10 +34,10 @@ class GraphEntity():
     json_str += '{'
     json_str += '"type": "' + self.o_type + '",'
     json_str += '"uuid": "' + self.uuid + '",'
-    json_str += '"origin_x": "' + self.x + '",'
-    json_str += '"origin_y": "' + self.y + '",'
-    json_str += '"width": "' + self.width + '",'
-    json_str += '"height": "' + self.height + '",'
+    json_str += '"originX": ' + self.x + ','
+    json_str += '"originY": ' + self.y + ','
+    json_str += '"width": ' + self.width + ','
+    json_str += '"height": ' + self.height + ','
     json_str += '"element": "' + self.element + '",'
     json_str += '"name": "' + self.name + '",'
     json_str += '"parents": ['+ self.parents + ']'
@@ -143,7 +143,7 @@ class NetworkRecognizer:
                     edges.append((latest_node_id, node_id))
 
                     # new json entry for edge
-                    new_json_entry = GraphEntity('edge', available_edge_id, '', '', '', '', 'gleisabschnitt', '', [latest_node_id, node_id])
+                    new_json_entry = GraphEntity('edge', available_edge_id, 'null', 'null', 'null', 'null', 'gleisabschnitt', '', [latest_node_id, node_id])
                     json_result.append(new_json_entry)
                     available_edge_id += 1
 
