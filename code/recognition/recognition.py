@@ -2,6 +2,10 @@ import cv2
 import numpy
 import torch
 import ultralytics
+import pytesseract
+from PIL import Image
+import pytesseract
+import re
 
 CLASS_MAINSIGNAL = 0
 CLASS_RADZAEHLER = 1
@@ -12,6 +16,9 @@ CLASS_WEICHE = 4
 def cls_to_str(cls_id):
   class_map = ['Mainsignal', 'Radzähler', 'Trackjoint', 'Tracknumber', 'Weiche']
   return class_map[cls_id]
+
+def strip_non_numbers(input_string):
+    return re.sub(r'\D', '', input_string)
 
 class GraphEntity():
   """
@@ -128,13 +135,25 @@ class NetworkRecognizer:
             if collided:
                 nodes.append(node_id)
 
-                # new json entry for node
                 node = self._objects[node_id]
+                text = ''
+
+                # Retrieve track number
+                if node.cls_id == CLASS_TRACKNUMBER:
+                  img_copy = self._img.copy()
+                  sub = img_copy[round(node.bb_coords[1]):round(node.bb_coords[3]), round(node.bb_coords[0]):round(node.bb_coords[2])]
+
+                  sub_rgb = cv2.cvtColor(sub, cv2.COLOR_BGR2RGB)
+                  pil = Image.fromarray(sub_rgb)
+                  text = pytesseract.image_to_string(pil)
+                  text = strip_non_numbers(text)
+
+                # new json entry for node
                 center_x = node.bb_coords[0] + (node.bb_coords[2] - node.bb_coords[0]) / 2
                 center_y = node.bb_coords[1] + (node.bb_coords[3] - node.bb_coords[1]) / 2
                 w = node.bb_coords[2] - node.bb_coords[0]
                 h = node.bb_coords[3] - node.bb_coords[1]
-                new_json_entry = GraphEntity('node', node_id, center_x,  center_y, w, h, cls_to_str(node.cls_id), '', '')
+                new_json_entry = GraphEntity('node', node_id, center_x,  center_y, w, h, cls_to_str(node.cls_id), text, '')
                 json_result.append(new_json_entry)
 
                 self._draw_node(curr_x, curr_y)

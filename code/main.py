@@ -5,7 +5,7 @@ import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
 from draw import draw
-from pdf2image import convert_from_path  
+from pdf2image import convert_from_path
 
 from recognition import recognition
 
