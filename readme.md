@@ -81,7 +81,7 @@ The following data structure is expected out of the image analysis:
     "height": 2.0,
     "element": "Mainsignal",
     "name": "B2",
-    "parents": ["7777-7777-7777"]
+    "parents": ["1111-1111-1111"]
   }
 ]
 ```
