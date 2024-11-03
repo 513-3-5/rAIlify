@@ -31,5 +31,5 @@ ARGV.each do |filename|
     end
   end
 
-  graph.write_to_graphic_file('png', "output/#{filename.split(".").first}")
+  graph.write_to_graphic_file('png', "output/#{filename.split('/').last.split('.').first}")
 end
