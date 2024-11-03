@@ -23,6 +23,23 @@ My vision is to use the extracted topology data as input for further sophisticat
 * Patrick Schwartz
 * Noah Grun
 
+## Setup
 
+### Visualiztion
 
+#### Requirements
 
+- Ruby installed (https://www.ruby-lang.org/en/documentation/installation/)
+- Graphviz installed (https://graphviz.org/download/)
+
+#### installation
+
+1. Navigate to visualization folder: `cd code/visualization`
+2. Install libraries: `bundle install`
+
+#### Run
+
+The application can be run with multiple files. The results will be stored in the `output` folder.
+
+- Run application: `ruby visualizer.rb path/filename1.json path/filename2.json ...`
+- Run with given example files: `ruby visualizer.rb input/example.json input/tiefengrund.json`
