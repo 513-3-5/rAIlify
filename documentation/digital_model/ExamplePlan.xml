@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <Rails>
+        <Rail id="ne2" macro-area="">
+            <Path>
+                <Point x="-2370" y="-450"/>
+                <Point x="-1201.62" y="-450"/>
+            </Path>
+            <Attributes/>
+        </Rail>
+        <Rail id="ne19" macro-area="">
+            <Path>
+                <Point x="-1199.62" y="-450"/>
+                <Point x="-621.77" y="-450"/>
+                <Point x="-532.97" y="-302"/>
+            </Path>
+            <Attributes/>
+        </Rail>
+        <Rail id="ne18" macro-area="">
+            <Path>
+                <Point x="-531.97" y="-300"/>
+                <Point x="-1113.17" y="-300"/>
+                <Point x="-1198.62" y="-448"/>
+            </Path>
+            <Attributes/>
+        </Rail>
+        <Rail id="ne12" macro-area="">
+            <Path>
+                <Point x="240" y="-300"/>
+                <Point x="-529.97" y="-300"/>
+            </Path>
+            <Attributes/>
+        </Rail>
+    </Rails>
+    <Entities>
+        <Entity id="gfm17" nid="0" type="T_Zaehlpunkt">
+            <Placement x="-724.376" y="-450">
+                <Text id="9" x="0.899774" y="-25.2962"/>
+                <Text id="25" x="-11.7624" y="-12.1812"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.822434"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP1.21</Attribute>
+                <Attribute id="A_Lps.loc-1">89.771</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="w70" nid="1" type="T_Weichenantrieb">
+            <Placement x="-1219.46" y="-450" flipAcross="true">
+                <Text id="11" x="0" y="32"/>
+                <Text id="13" x="-12.9212" y="34.9212"/>
+                <Text id="42" x="-9.17716" y="32"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="0.984727"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Weichen</Attribute>
+                <Attribute id="A_Referenz">topw162</Attribute>
+                <Attribute id="A_Zungenkontrolle">V_Ja</Attribute>
+                <Attribute id="A_Name">WA1.1</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="tops71" nid="2" type="T_Stationsname">
+            <Placement x="-857.379" y="-162.961"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Freie_Elemente</Attribute>
+                <Attribute id="A_Kurzbezeichnung">STTNM</Attribute>
+                <Attribute id="A_Name">StationsName</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="tope96" nid="3" type="T_Gleisende_Pfeil_gerade">
+            <Placement x="-2370" y="-450">
+                <Text id="3" x="199.445" y="14.8876"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="start"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Name"></Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="tops97" nid="4" type="T_Station_Pfeil">
+            <Placement x="-2173.85" y="-599.186" flipAlong="true"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Freie_Elemente</Attribute>
+                <Attribute id="A_Name">NextStationLeft</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs103" nid="5" type="T_Balisengruppe">
+            <Placement x="-2250.4" y="-450" flipAlong="true" flipAcross="true"/>
+            <Ports>
+                <Port rail="ne2" side="0.102364"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Zugsicherung</Attribute>
+                <Attribute id="A_Funktion"></Attribute>
+                <Attribute id="A_Name">11150</Attribute>
+                <Attribute id="A_Lps.loc-1">88.809</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="com99" nid="8" type="T_Composite_SIG">
+            <Placement x="-2220.15" y="-450" flipAcross="true"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Signale</Attribute>
+                <Attribute id="A_Name">COMPSIG</Attribute>
+                <Attribute id="A_Lps.loc-1">88.813</Attribute>
+            </Attributes>
+            <Components>
+                <Entity id="mast100" nid="6" type="T_Mast">
+                    <Placement x="-2220.15" y="-450" flipAcross="true"/>
+                    <Ports>
+                        <Port rail="ne2" side="0.128254"/>
+                    </Ports>
+                    <Attributes>
+                        <Attribute id="A_Layer">L_Signale</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl101" nid="7" type="T_Vorsignal_L" socketIndex="0">
+                    <Placement x="-2206.15" y="-410" flipAcross="true">
+                        <Text id="3" x="21.021" y="15.8495"/>
+                        <Text id="4" x="-13.6424" y="26.2291"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">W, 1*, 2*, 3*</Attribute>
+                        <Attribute id="A_Name">A*</Attribute>
+                    </Attributes>
+                </Entity>
+            </Components>
+        </Entity>
+        <Entity id="com119" nid="12" type="T_Composite_SIG">
+            <Placement x="-1779.64" y="-450" flipAcross="true"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Signale</Attribute>
+                <Attribute id="A_Name">COMPSIG</Attribute>
+                <Attribute id="A_Lps.loc-1">89.233</Attribute>
+            </Attributes>
+            <Components>
+                <Entity id="mast120" nid="9" type="T_Mast">
+                    <Placement x="-1779.64" y="-450" flipAcross="true"/>
+                    <Ports>
+                        <Port rail="ne2" side="0.505279"/>
+                    </Ports>
+                    <Attributes>
+                        <Attribute id="A_Layer">L_Signale</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl123" nid="10" type="T_Vorsignal_L" socketIndex="0">
+                    <Placement x="-1765.64" y="-410" flipAcross="true">
+                        <Text id="3" x="27.7186" y="15.532"/>
+                        <Text id="4" x="3.48299" y="25.9731"/>
+                        <Text id="19" x="49.7681" y="19.4581"/>
+                        <Text id="20" x="23.1408" y="36.2994"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">W, 1*, 3*</Attribute>
+                        <Attribute id="A_Name">C*</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl124" nid="11" type="T_Hauptsignal_L" socketIndex="0">
+                    <Placement x="-1743.64" y="-410" flipAcross="true">
+                        <Text id="3" x="-56.6832" y="26.6382"/>
+                        <Text id="4" x="-55.1082" y="15.9448"/>
+                        <Text id="19" x="-36.8258" y="36.4883"/>
+                        <Text id="20" x="-31.4178" y="19.1123"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">H, 1, 2, 3, RB</Attribute>
+                        <Attribute id="A_Name">A</Attribute>
+                    </Attributes>
+                </Entity>
+            </Components>
+        </Entity>
+        <Entity id="gfm125" nid="13" type="T_Zaehlpunkt">
+            <Placement x="-1769.86" y="-450">
+                <Text id="9" x="16.5899" y="-10.3188"/>
+                <Text id="25" x="2.47829" y="21.7222"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="0.513649"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP892.01</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs127" nid="14" type="T_Balisengruppe">
+            <Placement x="-1809.32" y="-450" flipAcross="true">
+                <Text id="6" x="0.727051" y="-18.7246"/>
+                <Text id="26" x="-0.991317" y="23.7048"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="0.479876"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Zugsicherung</Attribute>
+                <Attribute id="A_Name">11151</Attribute>
+                <Attribute id="A_Lps.loc-1">89.228</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs129" nid="15" type="T_Loop">
+            <Placement x="-1800.6" y="-450" flipAlong="true">
+                <Text id="2" x="123.51" y="12"/>
+                <Text id="19" x="31.3386" y="22.9219"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="0.48734" x="0" y="0"/>
+                <Port rail="ne2" side="0.364015" x="144.091" y="0"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Referenz"></Attribute>
+                <Attribute id="A_Name">123</Attribute>
+                <Attribute id="A_Lps.loc-1">89.228</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az131" nid="16" type="T_Achszaehlabschnitt">
+            <Placement x="-1568.12" y="-450" flipAlong="true"/>
+            <Ports>
+                <Port rail="ne2" side="0.686315"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">892</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az144" nid="17" type="T_Achszaehlabschnitt">
+            <Placement x="-1616.18" y="-450" flipAcross="true">
+                <Text id="1" x="-1.09921" y="-12.1004"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="0.645181"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">G892</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="topn148" nid="18" type="T_Gleisnummer">
+            <Placement x="-2315.79" y="-450">
+                <Text id="1" x="0" y="14"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="0.0463974"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Topologie</Attribute>
+                <Attribute id="A_Name">289</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="gfm149" nid="19" type="T_Zaehlpunkt">
+            <Placement x="-1250.27" y="-450" flipAcross="true"/>
+            <Ports>
+                <Port rail="ne2" side="0.958357"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP1w1</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="kv152" nid="20" type="T_Kabelverteiler">
+            <Placement x="-1241.28" y="-332.424"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Diverses</Attribute>
+                <Attribute id="A_Name">KV895</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="gfm158" nid="21" type="T_Zaehlpunkt">
+            <Placement x="-1086.24" y="-450" flipAcross="true"/>
+            <Ports>
+                <Port rail="ne19" side="0.196204"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP1.01</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="gfm159" nid="22" type="T_Zaehlpunkt">
+            <Placement x="-1086.24" y="-300" angle="180">
+                <Text id="9" x="-1.28997" y="22.2491"/>
+                <Text id="25" x="0" y="19.8953"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.953665"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP2.01</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az160" nid="23" type="T_Achszaehlabschnitt">
+            <Placement x="-1154.28" y="-450"/>
+            <Ports>
+                <Port rail="ne19" side="0.0784558"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">1w</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="topw162" nid="24" type="T_Weiche">
+            <Placement x="-1199.77" y="-450" offx="-0.845299" offy="0" flipAcross="true">
+                <Text id="1" x="48.0595" y="24.6097"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne2" side="end"/>
+                <Port rail="ne19" side="start"/>
+                <Port rail="ne18" side="end"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Geschwindigkeit_anzeigen">V_Nein</Attribute>
+                <Attribute id="A_Ablenkung_gerade">V_Nein</Attribute>
+                <Attribute id="A_Name">W1</Attribute>
+                <Attribute id="A_Lps.loc-1">89.539</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="com166" nid="27" type="T_Composite_SIG">
+            <Placement x="-1004" y="-300" angle="180"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Signale</Attribute>
+                <Attribute id="A_Name">COMPSIG</Attribute>
+                <Attribute id="A_Lps.loc-1">89.632</Attribute>
+            </Attributes>
+            <Components>
+                <Entity id="mast167" nid="25" type="T_Mast">
+                    <Placement x="-1004" y="-300" angle="180"/>
+                    <Ports>
+                        <Port rail="ne18" side="0.812164"/>
+                    </Ports>
+                    <Attributes>
+                        <Attribute id="A_Layer">L_Signale</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl172" nid="26" type="T_Hauptsignal_L" socketIndex="0">
+                    <Placement x="-1018" y="-260" angle="180">
+                        <Text id="3" x="26.0828" y="25.7774"/>
+                        <Text id="4" x="1.38683" y="15.0122"/>
+                        <Text id="20" x="-5.85431" y="15.4264"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">H, 1, RB</Attribute>
+                        <Attribute id="A_Name">B2</Attribute>
+                    </Attributes>
+                </Entity>
+            </Components>
+        </Entity>
+        <Entity id="gfm194" nid="28" type="T_Zaehlpunkt">
+            <Placement x="-635.119" y="-300" angle="180" flipAcross="true"/>
+            <Ports>
+                <Port rail="ne18" side="0.177476"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP2w2</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="gfm195" nid="29" type="T_Zaehlpunkt">
+            <Placement x="-635.119" y="-450" flipAlong="true">
+                <Text id="9" x="-1.52174" y="19.4203"/>
+                <Text id="25" x="-1.14714" y="23.2672"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.976899"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP2w3</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="gfm196" nid="30" type="T_Zaehlpunkt">
+            <Placement x="-724.376" y="-300" angle="180" flipAcross="true">
+                <Text id="9" x="-0.899774" y="20.5923"/>
+                <Text id="25" x="2.51233" y="23.0565"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.33105"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP2.21</Attribute>
+                <Attribute id="A_Lps.loc-1">0</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs199" nid="31" type="T_Balisengruppe">
+            <Placement x="-970.514" y="-450" flipAlong="true">
+                <Text id="6" x="1.28967" y="24.1763"/>
+                <Text id="26" x="-0.573572" y="23.8408"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.396475"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Zugsicherung</Attribute>
+                <Attribute id="A_Name">11152</Attribute>
+                <Attribute id="A_Lps.loc-1">89.636</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs200" nid="32" type="T_Balisengruppe">
+            <Placement x="-970.514" y="-300" angle="180">
+                <Text id="6" x="0.507246" y="23.9855"/>
+                <Text id="26" x="1.14714" y="24.4143"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.754549"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Zugsicherung</Attribute>
+                <Attribute id="A_Name">11153</Attribute>
+                <Attribute id="A_Lps.loc-1">89.636</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs205" nid="33" type="T_Loop">
+            <Placement x="-968.847" y="-300" angle="180" flipAlong="true">
+                <Text id="2" x="118.833" y="13.7995"/>
+                <Text id="19" x="44.9422" y="25.4299"/>
+                <Text id="20" x="46.2656" y="14"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.751681" x="0" y="0"/>
+                <Port rail="ne18" side="0.436636" x="183.104" y="0"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Name">123</Attribute>
+                <Attribute id="A_Lps.loc-1">89.636</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs206" nid="34" type="T_Balisengruppe">
+            <Placement x="-744.078" y="-450" flipAlong="true">
+                <Text id="6" x="0.819748" y="21.9702"/>
+                <Text id="26" x="4.58858" y="23.2672"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.788338"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Zugsicherung</Attribute>
+                <Attribute id="A_Name">11154</Attribute>
+                <Attribute id="A_Lps.loc-1">89.777</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs207" nid="35" type="T_Balisengruppe">
+            <Placement x="-744.078" y="-300" angle="180" flipAlong="true">
+                <Text id="6" x="-2.53623" y="25"/>
+                <Text id="26" x="-0.944349" y="22.1079"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.364948"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Zugsicherung</Attribute>
+                <Attribute id="A_Name">11155</Attribute>
+                <Attribute id="A_Lps.loc-1">89.767</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs208" nid="36" type="T_Loop">
+            <Placement x="-746.647" y="-450" flipAlong="true" flipAcross="true">
+                <Text id="2" x="183.616" y="13.7995"/>
+                <Text id="19" x="30.8602" y="25.972"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.783892" x="0" y="0"/>
+                <Port rail="ne19" side="0.294337" x="282.887" y="0"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Name">123</Attribute>
+                <Attribute id="A_Lps.loc-1">89.767</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs209" nid="37" type="T_Loop">
+            <Placement x="-741.19" y="-300" angle="180" flipAcross="true">
+                <Text id="2" x="185.866" y="14.2494"/>
+                <Text id="19" x="32.6332" y="23.2318"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.359979" x="0" y="0"/>
+                <Port rail="ne18" side="0.833243" x="275.061" y="0"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Name">123</Attribute>
+                <Attribute id="A_Lps.loc-1">89.767</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="com212" nid="40" type="T_Composite_SIG">
+            <Placement x="-744.078" y="-450"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Signale</Attribute>
+                <Attribute id="A_Name">COMPSIG</Attribute>
+                <Attribute id="A_Lps.loc-1">89.777</Attribute>
+            </Attributes>
+            <Components>
+                <Entity id="mast213" nid="38" type="T_Mast">
+                    <Placement x="-744.078" y="-450"/>
+                    <Ports>
+                        <Port rail="ne19" side="0.788338"/>
+                    </Ports>
+                    <Attributes>
+                        <Attribute id="A_Layer">L_Signale</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl216" nid="39" type="T_Hauptsignal_L" socketIndex="0">
+                    <Placement x="-730.078" y="-490">
+                        <Text id="3" x="19.2483" y="15.4032"/>
+                        <Text id="4" x="35.4442" y="25.4476"/>
+                        <Text id="19" x="13.4611" y="21.3351"/>
+                        <Text id="20" x="27.5177" y="33.0776"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">H, 1</Attribute>
+                        <Attribute id="A_Name">C1</Attribute>
+                    </Attributes>
+                </Entity>
+            </Components>
+        </Entity>
+        <Entity id="com214" nid="43" type="T_Composite_SIG">
+            <Placement x="-724.376" y="-300" angle="180" flipAlong="true"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Signale</Attribute>
+                <Attribute id="A_Name">COMPSIG</Attribute>
+                <Attribute id="A_Lps.loc-1">89.771</Attribute>
+            </Attributes>
+            <Components>
+                <Entity id="mast215" nid="41" type="T_Mast">
+                    <Placement x="-724.376" y="-300" angle="180" flipAlong="true"/>
+                    <Ports>
+                        <Port rail="ne18" side="0.33105"/>
+                    </Ports>
+                    <Attributes>
+                        <Attribute id="A_Layer">L_Signale</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl217" nid="42" type="T_Hauptsignal_L" socketIndex="0">
+                    <Placement x="-710.376" y="-260" angle="180" flipAlong="true">
+                        <Text id="3" x="21.0479" y="14.9533"/>
+                        <Text id="4" x="32.295" y="26.7973"/>
+                        <Text id="19" x="12.5" y="28"/>
+                        <Text id="20" x="31.0404" y="13.7787"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">H, 3</Attribute>
+                        <Attribute id="A_Name">C2</Attribute>
+                    </Attributes>
+                </Entity>
+            </Components>
+        </Entity>
+        <Entity id="w219" nid="44" type="T_Weichenantrieb">
+            <Placement x="-522.98" y="-300" angle="180">
+                <Text id="13" x="17.2464" y="21.4928"/>
+                <Text id="44" x="20.4609" y="22"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne12" side="0.990922"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Weichen</Attribute>
+                <Attribute id="A_Referenz">topw192</Attribute>
+                <Attribute id="A_Zungenkontrolle">V_Nein</Attribute>
+                <Attribute id="A_Name">WA2.2</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="gfm222" nid="45" type="T_Zaehlpunkt">
+            <Placement x="-448.581" y="-300" angle="180" flipAcross="true"/>
+            <Ports>
+                <Port rail="ne12" side="0.894296"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP92.11</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az224" nid="46" type="T_Achszaehlabschnitt">
+            <Placement x="-842.271" y="-450" flipAlong="true" flipAcross="true">
+                <Text id="1" x="-2.02898" y="19.1304"/>
+                <Text id="10" x="-14.3225" y="-15.3072"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.618408"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">1.1</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az226" nid="47" type="T_Achszaehlabschnitt">
+            <Placement x="-672.077" y="-450">
+                <Text id="1" x="10.6522" y="-17.3913"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.91294"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">1.2</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az228" nid="48" type="T_Achszaehlabschnitt">
+            <Placement x="-820.218" y="-300" angle="180" flipAcross="true">
+                <Text id="1" x="-2.02898" y="-18.913"/>
+                <Text id="10" x="8.7537" y="18.3581"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.495953"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">2.1</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az229" nid="49" type="T_Achszaehlabschnitt">
+            <Placement x="-672.077" y="-300" angle="180" flipAcross="true">
+                <Text id="1" x="-1.01449" y="-15.3623"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.241065"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">2.2</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az231" nid="50" type="T_Achszaehlabschnitt">
+            <Placement x="-506.036" y="-300" angle="180" flipAcross="true">
+                <Text id="1" x="25.3623" y="8.98551"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne12" side="0.968916"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">2w</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="topn232" nid="51" type="T_Gleisnummer">
+            <Placement x="-869.518" y="-450" offx="11.1724" offy="-8.37929" flipAlong="true"/>
+            <Ports>
+                <Port rail="ne19" side="0.571256"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Topologie</Attribute>
+                <Attribute id="A_Name">1</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="gfm265" nid="52" type="T_Zaehlpunkt">
+            <Placement x="-334.087" y="-300" offx="23.9408" offy="0" angle="180"/>
+            <Ports>
+                <Port rail="ne12" side="0.745597"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">ZP92.21</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az267" nid="53" type="T_Achszaehlabschnitt">
+            <Placement x="-334.087" y="-300" angle="180" flipAcross="true">
+                <Text id="10" x="73.8544" y="10.5506"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne12" side="0.745597"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">92.1</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="topn270" nid="54" type="T_Gleisnummer">
+            <Placement x="-394.211" y="-300" offx="0.104405" offy="-45.3574" angle="180" flipAlong="true">
+                <Text id="10" x="25.0578" y="30.2656"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne12" side="0.823683"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Topologie</Attribute>
+                <Attribute id="A_Name">92</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="com274" nid="58" type="T_Composite_SIG">
+            <Placement x="-227.068" y="-300" angle="180"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Signale</Attribute>
+                <Attribute id="A_Name">COMPSIG</Attribute>
+                <Attribute id="A_Lps.loc-1">90.128</Attribute>
+            </Attributes>
+            <Components>
+                <Entity id="mast275" nid="55" type="T_Mast">
+                    <Placement x="-227.068" y="-300" angle="180"/>
+                    <Ports>
+                        <Port rail="ne12" side="0.606605"/>
+                    </Ports>
+                    <Attributes>
+                        <Attribute id="A_Layer">L_Signale</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl277" nid="56" type="T_Vorsignal_L" socketIndex="0">
+                    <Placement x="-241.068" y="-260" angle="180">
+                        <Text id="3" x="-1.07059" y="16.7769"/>
+                        <Text id="4" x="16.4093" y="26.8347"/>
+                        <Text id="19" x="-14.78" y="26.0393"/>
+                        <Text id="20" x="-14.4157" y="41.3106"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">W, 1*</Attribute>
+                        <Attribute id="A_Name">B*</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl278" nid="57" type="T_Hauptsignal_L" socketIndex="0">
+                    <Placement x="-263.068" y="-260" angle="180">
+                        <Text id="3" x="31.5337" y="27.2231"/>
+                        <Text id="4" x="21.6284" y="16.1942"/>
+                        <Text id="19" x="10.7797" y="41.1821"/>
+                        <Text id="20" x="8.86291" y="26.137"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">H, 1, 2, 3</Attribute>
+                        <Attribute id="A_Name">D</Attribute>
+                    </Attributes>
+                </Entity>
+            </Components>
+        </Entity>
+        <Entity id="tops287" nid="59" type="T_Station_Pfeil">
+            <Placement x="78.2908" y="-601.181"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Freie_Elemente</Attribute>
+                <Attribute id="A_Name">NextStationRight</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="tope288" nid="60" type="T_Gleisende_Pfeil_gerade">
+            <Placement x="240" y="-300" flipAlong="true"/>
+            <Ports>
+                <Port rail="ne12" side="start"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Name"></Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="topw349" nid="61" type="T_Weiche">
+            <Placement x="-531.77" y="-300" offx="0.8" offy="0" flipAlong="true"/>
+            <Ports>
+                <Port rail="ne12" side="end"/>
+                <Port rail="ne18" side="start"/>
+                <Port rail="ne19" side="end"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Geschwindigkeit_anzeigen">V_Nein</Attribute>
+                <Attribute id="A_Ablenkung_gerade">V_Nein</Attribute>
+                <Attribute id="A_Name">W2</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="zs350" nid="62" type="T_Loop">
+            <Placement x="-960.547" y="-450">
+                <Text id="19" x="44.5026" y="27.1883"/>
+                <Text id="20" x="46.2656" y="15.3188"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne19" side="0.413724" x="0" y="0"/>
+                <Port rail="ne19" side="0.695211" x="162.656" y="0"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Referenz"></Attribute>
+                <Attribute id="A_Name">123</Attribute>
+                <Attribute id="A_Lps.loc-1">89.636</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="az351" nid="63" type="T_Achszaehlabschnitt">
+            <Placement x="-2009.02" y="-450"/>
+            <Ports>
+                <Port rail="ne2" side="0.308956"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Gleisfreimelder</Attribute>
+                <Attribute id="A_Name">289</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="topgl365" nid="64" type="T_Gleisnummer">
+            <Placement x="-858.896" y="-300" angle="180" flipAcross="true">
+                <Text id="10" x="-2.08901" y="23.4005"/>
+            </Placement>
+            <Ports>
+                <Port rail="ne18" side="0.562502"/>
+            </Ports>
+            <Attributes>
+                <Attribute id="A_Layer">L_Topologie</Attribute>
+                <Attribute id="A_Name">2</Attribute>
+            </Attributes>
+        </Entity>
+        <Entity id="com164" nid="65" type="T_Composite_SIG">
+            <Placement x="-1004" y="-450" flipAlong="true"/>
+            <Attributes>
+                <Attribute id="A_Layer">L_Signale</Attribute>
+                <Attribute id="A_Name">COMPSIG</Attribute>
+                <Attribute id="A_Lps.loc-1">89.632</Attribute>
+            </Attributes>
+            <Components>
+                <Entity id="mast165" nid="66" type="T_Mast">
+                    <Placement x="-1004" y="-450" flipAlong="true"/>
+                    <Ports>
+                        <Port rail="ne19" side="0.338525"/>
+                    </Ports>
+                    <Attributes>
+                        <Attribute id="A_Layer">L_Signale</Attribute>
+                    </Attributes>
+                </Entity>
+                <Entity id="sigl171" nid="67" type="T_Hauptsignal_L" socketIndex="0">
+                    <Placement x="-1045" y="-490" flipAcross="true">
+                        <Text id="3" x="5.74301" y="-15.8737"/>
+                        <Text id="4" x="31.5643" y="-27.0385"/>
+                        <Text id="19" x="6.76428" y="-15.5915"/>
+                        <Text id="20" x="30.8543" y="-28.7386"/>
+                    </Placement>
+                    <Attributes>
+                        <Attribute id="A_Fahrbegriff">H, 1, RB</Attribute>
+                        <Attribute id="A_Name">B1</Attribute>    
+                    </Attributes>
+                </Entity>
+            </Components>
+        </Entity>
+    </Entities>
+    <TrackCircuits/>

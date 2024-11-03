@@ -1,0 +1,13 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 5
+names: ['mainsignal', 'radzaehler', 'trackjoint', 'tracknumber', 'weiche']
+
+roboflow:
+  workspace: adrian-altermatt
+  project: railtracks-j61q0
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/adrian-altermatt/railtracks-j61q0/dataset/1
