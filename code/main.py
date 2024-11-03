@@ -7,6 +7,8 @@ from PIL import Image
 from draw import draw
 from pdf2image import convert_from_path  
 
+from recognition import recognition
+
 rail_pngs = []  
 splitted_pdfs = []
 annotated_pdfs = []
@@ -124,7 +126,6 @@ def open_pdf(file_path):
     except Exception as e:
         print(f"Error opening PDF file: {e}")                
 
-
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         print("Error: Please provide a .pdf or .tif file.")
@@ -141,11 +142,16 @@ if __name__ == "__main__":
 
     for pdf in splitted_pdfs:
         convert_pdf_to_png(pdf) # Fills List rail_pngs
-        
-        # TODO: Continue Process 
-        json = "code/visualization/example.json" # TODO change json path
 
-        annotated_pdfs.append(draw.draw_annotations(pdf, json))
+        c = recognition.Classify()
+        # TODO, get images or path
+        json = c.classify('recognition/example-network-topology-3.png')
+
+        # TODO: Continue Process 
+        #json = "code/visualization/example.json" # TODO change json path
+        print(json)
+
+        #annotated_pdfs.append(draw.draw_annotations(pdf, json))
 
     merger = PdfWriter()
 
