@@ -47,7 +47,9 @@ The application can be run with multiple files. The results will be stored in th
 ### Input / Structured Data Structure
 
 The following data structure is expected out of the image analysis. It is used for forming a graph data structure that
-can easily be visualized and be used for further processes.
+can easily be visualized and be used for further processes. Nodes are fixed points on the tracks, edges are tracks
+connecting two nodes and objects are any objects that are objects that are not directly connected to the tracks on the
+plans. There can be multiple of each type.
 
 ```json
 [
@@ -89,7 +91,7 @@ can easily be visualized and be used for further processes.
 
 ### Output
 
-![Visualized Graph Example](code/visualization/output/example.png)
+![Visualized Graph Example](assets/img/example.png)
 
 ## Sliding Window Approach
 One challenge we needed to handle was detecting symbols across a large, high-resolution image. YOLO models are typically designed for object detection on images with 640 x 640 dimensions. Since railway plans can be significantly larger than the standard input size, containing intricate details spread across a wide area, downsizing that image to a 640x640 format led to a worse recognition of the symbols by our algorithm. 
