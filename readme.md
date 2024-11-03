@@ -46,7 +46,8 @@ The application can be run with multiple files. The results will be stored in th
 
 ### Input / Structured Data Structure
 
-The following data structure is expected out of the image analysis:
+The following data structure is expected out of the image analysis. It is used for forming a graph data structure that
+can easily be visualized and be used for further processes.
 
 ```json
 [
