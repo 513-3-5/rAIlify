@@ -5,9 +5,12 @@ import subprocess
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
 from draw import draw
-from pdf2image import convert_from_path  
+from pdf2image import convert_from_path
+from pathlib import Path
 
-rail_pngs = []  
+from recognition import recognition
+
+rail_pngs = []
 splitted_pdfs = []
 annotated_pdfs = []
 
@@ -16,6 +19,9 @@ def is_pdf(file_path):
 
 def is_tiff(file_path):
     return file_path.lower().endswith((".tif", ".tiff"))
+
+def is_png(file_path):
+    return file_path.lower().endswith(".png")
 
 def count_pages_in_pdf(file_path):
     try:
@@ -124,30 +130,30 @@ def open_pdf(file_path):
     except Exception as e:
         print(f"Error opening PDF file: {e}")                
 
-
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        print("Error: Please provide a .pdf or .tif file.")
+        print('Error: Please provide a .png file' )
         sys.exit(1)          
 
     if len(sys.argv) < 2:  
-        print("Please only provide a single .pdf or .tif file.")
+        print("Please only provide a single .png file.")
         sys.exit(1)
 
     file_path = sys.argv[1]
 
-    if not is_valid_pdf(file_path):
+    if not is_png(file_path):
         sys.exit(1)
 
-    for pdf in splitted_pdfs:
-        convert_pdf_to_png(pdf) # Fills List rail_pngs
-        
-        # TODO: Continue Process 
-        json = "code/visualization/example.json" # TODO change json path
+    c = recognition.Classify()
+    json = c.classify(file_path)
 
-        annotated_pdfs.append(draw.draw_annotations(pdf, json))
+    print(json)
 
-    merger = PdfWriter()
+    file_name = Path(file_path).stem
+    with open("visualization/" + file_name + ".json", "w") as text_file:
+        text_file.write(json)
+
+    """merger = PdfWriter()
 
     for an_pdf in annotated_pdfs:
         merger.append(an_pdf)
@@ -159,7 +165,7 @@ if __name__ == "__main__":
     clear_output_directory("assets/temp_pdf_output")
     clear_output_directory("assets/temp_png_output")
     
-    open_pdf(an_pdf_file_name);
+    open_pdf(an_pdf_file_name);"""
     
 
 
