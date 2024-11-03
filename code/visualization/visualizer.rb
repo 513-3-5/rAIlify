@@ -15,7 +15,7 @@ ARGV.each do |filename|
 
   nodes.each do |node|
     graph.add_vertex(node['uuid'])
-    graph.set_vertex_options(node['uuid'], label: "#{node['element']}\n#{node['name']}", group: 'track')
+    graph.set_vertex_options(node['uuid'], label: "#{node['element']}\n#{node['name']}", group: 'track', shape: 'box')
   end
 
   edges.each do |edge|
@@ -26,8 +26,8 @@ ARGV.each do |filename|
   objects.each do |object|
     unless object['parents'].empty?
       graph.add_edge(object['uuid'], object['parents'][0])
-      graph.set_vertex_options(object['uuid'], label: "#{object['element']}\n#{object['name']}")
-      graph.set_edge_options(object['uuid'], object['parents'][0], style: 'dotted')
+      graph.set_vertex_options(object['uuid'], label: "#{object['element']}\n#{object['name']}", shape: 'plain')
+      graph.set_edge_options(object['uuid'], object['parents'][0], style: 'dotted' )
     end
   end
 
