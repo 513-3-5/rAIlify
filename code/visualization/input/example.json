@@ -229,5 +229,27 @@
     "element": "Mainsignal",
     "name": "B2",
     "parents": ["7777-7777-7777"]
+  },
+  {
+    "type": "node",
+    "uuid": "1010-1010-1010",
+    "originX": 80.0,
+    "originY": 100.0,
+    "width": 1.0,
+    "height": 1.0,
+    "element": "Radzähler",
+    "name": "ZP8",
+    "parents": []
+  },
+  {
+    "type": "edge",
+    "uuid": "2345-3543-5432",
+    "originX": null,
+    "originY": null,
+    "width": null,
+    "height": null,
+    "element": "Gleisabschnitt",
+    "name": "103",
+    "parents": ["7777-7777-7777", "1010-1010-1010"]
   }
 ]
